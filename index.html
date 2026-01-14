@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Md Rajib Hassan | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<!-- preloader -->
+    <div class="preloader" id="preloader">
+  <svg viewBox="0 0 1000 1000" preserveAspectRatio="none">
+    <path
+      id="preloaderSvg"
+      d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"
+    ></path>
+  </svg>
+
+  <div class="preloader-heading">
+    <div class="load-text">
+      <span>L</span>
+      <span>o</span>
+      <span>a</span>
+      <span>d</span>
+      <span>i</span>
+      <span>n</span>
+      <span>g</span>
+    </div>
+  </div>
+</div>
+
+<!-- back to top -->
+
+<div class="progress-wrap" id="scrollUp">
+  <svg
+    class="progress-circle"
+    width="100%"
+    height="100%"
+    viewBox="-1 -1 102 102"
+  >
+    <path
+      d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+    />
+  </svg>
+</div>
+
+
+  <!-- hero -->
+  <section class="hero-section" id="intro">
+  <!-- SVG TEXT -->
+  
+
+  <div class="container">
+    <div class="hero-grid">
+      <!-- LEFT CONTENT -->
+      <div class="hero-content">
+        <span class="hero-sub-title">I am Rajib Hassan</span>
+        <h1 class="hero-title">Web Developer</h1>
+
+        <!-- MOBILE IMAGE -->
+        <div class="hero-image mobile-only">
+          <img src="assets/img/hero/me.png" alt="Rajib Hassan" />
+        </div>
+
+        <p class="hero-description">
+          I'm a Frontend Developer with extensive hands-on experience building
+          responsive, full-stack web applications using React, Next.js, and
+          Node.js. Skilled in Tailwind CSS and Shadcn UI to create modern,
+          user-focused interfaces, with strong understanding of RESTful APIs
+          and PostgreSQL databases.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#" class="btn">Download CV</a>
+
+          <ul class="social-icons">
+            <li><a href="#" aria-label="LinkedIn">in</a></li>
+            <li><a href="#" aria-label="GitHub">gh</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- DESKTOP IMAGE -->
+      <div class="hero-image desktop-only">
+        <img src="assets/img/hero/me.png" alt="Rajib Hassan" />
+      </div>
+    </div>
+
+    <!-- FUN FACTS -->
+    <div class="funfact-area">
+      <div class="funfact-item">
+        <div class="number" data-count="2">0</div>
+        <div class="text">Years of<br />Experience</div>
+      </div>
+
+      <div class="funfact-item">
+        <div class="number" data-count="5">0+</div>
+        <div class="text">Projects<br />Completed</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- projects -->
+   <section class="portfolio-section" id="works-section">
+  <div class="container">
+
+    <!-- SECTION HEADER -->
+    <div class="section-header">
+      <h2>My Recent Works</h2>
+      <p>
+        We put your ideas and wishes into a unique web project
+        that inspires you and your customers.
+      </p>
+    </div>
+
+    <!-- FILTER BUTTONS -->
+    <div class="portfolio-filter">
+      <div class="button-group">
+        <button class="active" data-filter="*">All</button>
+        <button data-filter="full">Full stack</button>
+        <button data-filter="wp">WordPress</button>
+        <button data-filter="raw">HTML</button>
+        <span class="active-bg"></span>
+      </div>
+    </div>
+
+    <!-- PORTFOLIO GRID -->
+    <div class="portfolio-grid">
+      <div class="portfolio-item full" data-title="Infinity Pathwayz" data-desc="Student Consultancy Platform" data-img="assets/img/portfolio/2.jpg">
+        <img src="assets/img/portfolio/2.jpg" alt="">
+        <div class="overlay">
+          <h3>Infinity Pathwayz</h3>
+          <p>Student Consultancy Platform</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item wp" data-title="FoodVillage" data-desc="Online Store" data-img="assets/img/portfolio/1.jpg">
+        <img src="assets/img/portfolio/1.jpg" alt="">
+        <div class="overlay">
+          <h3>FoodVillage</h3>
+          <p>Online Store</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item raw" data-title="Variation Printing" data-desc="Printing & Packaging Website" data-img="assets/img/portfolio/3.jpg">
+        <img src="assets/img/portfolio/3.jpg" alt="">
+        <div class="overlay">
+          <h3>Variation Printing</h3>
+          <p>Printing & Packaging</p>
+        </div>
+      </div>
+
+      <div class="portfolio-item full" data-title="VTicket" data-desc="Event Ticketing Platform" data-img="assets/img/portfolio/4.jpg">
+        <img src="assets/img/portfolio/4.jpg" alt="">
+        <div class="overlay">
+          <h3>VTicket</h3>
+          <p>Event Ticketing Platform</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MODAL -->
+<div class="portfolio-modal" id="portfolioModal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <img id="modalImg" src="" alt="">
+    <h3 id="modalTitle"></h3>
+    <p id="modalDesc"></p>
+  </div>
+</div>
+
+
+  <!-- EDUCATION -->
+  <section class="section">
+    <h2>Education</h2>
+    <p><strong>Diploma in Computer Science & Application</strong></p>
+    <p>Bangladesh Open University (2024 – Running)</p>
+
+    <p><strong>Higher Secondary Certificate</strong></p>
+    <p>Dhaka Commerce College — GPA: 4.00</p>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="section">
+    <h2>Work Experience</h2>
+
+    <div class="experience">
+      <h3>Jr. Web Developer</h3>
+      <p>Variation Communications | Sep 2024 – Present</p>
+    </div>
+
+    <div class="experience">
+      <h3>Data Annotator</h3>
+      <p>Acme AI | Feb 2023 – Jun 2024</p>
+    </div>
+
+    <div class="experience">
+      <h3>Office Admin</h3>
+      <p>SM Shikkha Poribar | Jan 2022 – Feb 2023</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Md Rajib Hassan</p>
+    <button id="scrollTop">↑ Back to Top</button>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
