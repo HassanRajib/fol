@@ -26,8 +26,7 @@ window.addEventListener("load", runCounter);
 const filterButtons = document.querySelectorAll(".button-group button");
 const portfolioItems = document.querySelectorAll(".portfolio-item");
 
-portfolioItems.forEach(item => item.classList.remove("hide"));
-
+// FILTER
 filterButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     filterButtons.forEach(b => b.classList.remove("active"));
@@ -36,40 +35,50 @@ filterButtons.forEach(btn => {
     const filter = btn.dataset.filter;
 
     portfolioItems.forEach(item => {
-      if (filter === "*" || item.classList.contains(filter)) {
-        item.classList.remove("hide");
-      } else {
-        item.classList.add("hide");
-      }
+      item.classList.toggle(
+        "hide",
+        filter !== "*" && !item.classList.contains(filter)
+      );
     });
   });
 });
 
-// MODAL LOGIC
+// MODAL
 const modal = document.getElementById("portfolioModal");
-const modalImg = document.getElementById("modalImg");
+// const modalImg = document.getElementById("modalImg");
 const modalTitle = document.getElementById("modalTitle");
 const modalDesc = document.getElementById("modalDesc");
+const modalTech = document.getElementById("modalTech");
+const modalWork = document.getElementById("modalWork");
+const liveLink = document.getElementById("liveLink");
+const githubLink = document.getElementById("githubLink");
 const closeBtn = document.querySelector(".close");
 
 portfolioItems.forEach(item => {
   item.addEventListener("click", () => {
     modal.classList.add("active");
-    modalImg.src = item.dataset.img;
-    modalTitle.textContent = item.dataset.title;
-    modalDesc.textContent = item.dataset.desc;
+
+    modalImg.src = item.dataset.img || "";
+    modalTitle.textContent = item.dataset.title || "";
+    modalDesc.textContent = item.dataset.desc || "";
+    modalTech.textContent = item.dataset.tech || "";
+
+    liveLink.href = item.dataset.live || "#";
+    githubLink.href = item.dataset.github || "#";
+
+    modalWork.innerHTML = "";
+    if (item.dataset.work) {
+      item.dataset.work.split("|").forEach(point => {
+        const li = document.createElement("li");
+        li.textContent = point;
+        modalWork.appendChild(li);
+      });
+    }
   });
 });
 
-closeBtn.addEventListener("click", () => {
-  modal.classList.remove("active");
-});
-
-modal.addEventListener("click", e => {
-  if (e.target === modal) modal.classList.remove("active");
-});
-
-
+closeBtn.onclick = () => modal.classList.remove("active");
+modal.onclick = e => e.target === modal && modal.classList.remove("active");
 
 
 // preloader function
@@ -84,7 +93,6 @@ window.addEventListener("load", () => {
     }, 1000);
   }, 1200);
 });
-
 
 // back to top function
 document.addEventListener("DOMContentLoaded", () => {
@@ -103,8 +111,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const docHeight =
       document.documentElement.scrollHeight - window.innerHeight;
 
-    const progress =
-      pathLength - (scrollTop * pathLength) / docHeight;
+    const progress = pathLength - (scrollTop * pathLength) / docHeight;
 
     progressPath.style.strokeDashoffset = progress;
 
@@ -127,4 +134,16 @@ document.addEventListener("DOMContentLoaded", () => {
       behavior: "smooth",
     });
   });
+});
+
+// carousel
+
+const track = document.querySelector(".skills-track");
+
+track.addEventListener("mouseenter", () => {
+  track.style.animationPlayState = "paused";
+});
+
+track.addEventListener("mouseleave", () => {
+  track.style.animationPlayState = "running";
 });
